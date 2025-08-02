@@ -1,0 +1,29 @@
+<div class="container mt-5" style="border: 3px solid red; max-width: 600px; background: #f8f8f8; padding: 0;">
+
+  <!-- Header Section -->
+  <div style="background: #2196f3; padding: 2rem 1rem 1.5rem 1rem;">
+    <div style="border: 3px solid yellow; padding: 1rem;">
+      <!-- RIGHT aligned title -->
+      <h2 class="text-white fw-bold mb-4 text-end" style="font-size: 2rem;">To-Do App!</h2>
+
+      <!-- Custom Input Component -->
+      <app-todo-input (add)="addTodo($event)"></app-todo-input>
+    </div>
+  </div>
+
+  <!-- List Section -->
+  <div style="padding: 2rem 1rem 1rem 1rem;">
+    <div style="border: 3px solid yellow; padding: 1rem;">
+      <h3 class="mb-3" style="font-size: 1.5rem;">
+        ToDoList
+        <span style="font-weight: normal;">Let's get some work done!</span>
+      </h3>
+      <app-todo-list
+        [todos]="todos"
+        (delete)="deleteTodo($event)"
+        (toggle)="toggleComplete($event)">
+      </app-todo-list>
+    </div>
+  </div>
+
+</div>

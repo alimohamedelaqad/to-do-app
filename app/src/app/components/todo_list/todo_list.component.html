@@ -1,0 +1,9 @@
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li *ngFor="let todo of todos" [style.text-decoration]="todo.completed ? 'line-through' : 'none'" style="margin-bottom: 0.5rem;">
+    {{ todo.text }}
+    <button (click)="toggle.emit(todo.id)" style="margin-left: 1rem;">
+      {{ todo.completed ? "Undo" : "Complete" }}
+    </button>
+    <button (click)="delete.emit(todo.id)" style="margin-left: 0.5rem;">Delete</button>
+  </li>
+</ul>
